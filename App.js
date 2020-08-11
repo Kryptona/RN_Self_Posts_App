@@ -1,7 +1,6 @@
 import 'react-native-gesture-handler';
 import React, {useState} from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import {StyleSheet, Text, View} from 'react-native';
+import {AppNavigation} from "./src/navigation/AppNavigation";
 import {AppLoading} from 'expo';
 import {bootstrap} from "./src/bootstrap";
 
@@ -11,18 +10,13 @@ export default function App() {
 
 
     if (!isReady) {
-        return <AppLoading 
+        return <AppLoading
             startAsync={bootstrap}
-            onFinish{() => setIsReady(true)} 
+            onFinish={() => setIsReady(true)}
             onError={err => console.log(err)}
         />
     }
     return (
-        <NavigationContainer>
-            <View>
-                <Text>Open up App.js to start working on your app!</Text>
-            </View>
-        </NavigationContainer>
-       
+        <AppNavigation/>
     );
 }

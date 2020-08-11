@@ -5,10 +5,14 @@ export const PostScreen = ({}) => {
     return (
         <View style={styles.center}>
             <Text>
-                MainScreen
+                PostScreen
             </Text>
         </View>
     )
+};
+
+PostScreen.options = {
+    headerTitle: 'Пост №42'
 };
 
 const styles = StyleSheet.create({

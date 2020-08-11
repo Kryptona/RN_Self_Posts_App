@@ -10,6 +10,7 @@
       <e p="node_modules\@react-navigation\core" t="IncludeRecursive" />
       <e p="node_modules\@react-navigation\native" t="IncludeRecursive" />
       <e p="node_modules\@react-navigation\routers" t="IncludeRecursive" />
+      <e p="node_modules\@react-navigation\stack" t="IncludeRecursive" />
       <e p="node_modules\@types" t="IncludeRecursive">
         <e p="istanbul-lib-coverage" t="IncludeRecursive" />
         <e p="istanbul-lib-report" t="IncludeRecursive" />
@@ -41,6 +42,7 @@
       <e p="node_modules\react-native" t="IncludeRecursive" />
       <e p="node_modules\react-native-appearance" t="IncludeRecursive" />
       <e p="node_modules\react-native-gesture-handler" t="IncludeRecursive" />
+      <e p="node_modules\react-native-iphone-x-helper" t="IncludeRecursive" />
       <e p="node_modules\react-native-reanimated" t="IncludeRecursive" />
       <e p="node_modules\react-native-safe-area-context" t="IncludeRecursive" />
       <e p="node_modules\react-native-screens" t="IncludeRecursive" />

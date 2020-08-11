@@ -5,7 +5,7 @@ export const AboutScreen = ({}) => {
     return (
         <View style={styles.center}>
             <Text>
-                MainScreen
+                AboutScreen
             </Text>
         </View>
     )

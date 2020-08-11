@@ -5,7 +5,7 @@ export const BookedScreen = ({}) => {
     return (
         <View style={styles.center}>
             <Text>
-                MainScreen
+                BookedScreen
             </Text>
         </View>
     )
