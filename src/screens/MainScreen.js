@@ -5,22 +5,16 @@ import {DATA} from "../data";
 import {Post} from "../components/Post";
 
 export const MainScreen = ({navigation}) => {
-    const goToPost = () => {
-        navigation.push('PostScreen')
+    const openPostHandler = (post) => {
+        navigation.navigate('PostScreen', {postId: post.id, date: post.date})
     };
     return (
-        // <View style={styles.center}>
-        //     <Text>
-        /*       MainScreen */
-        /*    </Text>*/
-        /*    <Button color={THEME.POWDER_PURUPURE_BT} title="To Post" onPress={goToPost}/>*/
-        /*</View>*/
         <View style={styles.wrapper}>
             <FlatList
                 data={DATA}
                 keyExtractor={post => post.id.toString()}
                 renderItem={({item}) =>
-                    <Post post={item}/>
+                    <Post post={item} onOpen={openPostHandler}/>
                 }
             />
         </View>

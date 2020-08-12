@@ -25,7 +25,7 @@ export const AppNavigation = () => (
 
         >
             <PostNavigator.Screen
-                options={{title: PostScreen.options.headerTitle}}
+                options={PostScreen.options}
                 name="PostScreen"
                 component={PostScreen}
             />
