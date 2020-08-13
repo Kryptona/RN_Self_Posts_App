@@ -47,6 +47,7 @@
       <e p="node_modules\react-native-safe-area-context" t="IncludeRecursive" />
       <e p="node_modules\react-native-screens" t="IncludeRecursive" />
       <e p="node_modules\react-native-web" t="IncludeRecursive" />
+      <e p="node_modules\react-navigation-header-buttons" t="IncludeRecursive" />
       <e p="node_modules\unimodules-permissions-interface" t="IncludeRecursive" />
     </e>
     <e p="C:\Users\Дарья\.Rider2019.2\system\extResources" t="IncludeRecursive" />

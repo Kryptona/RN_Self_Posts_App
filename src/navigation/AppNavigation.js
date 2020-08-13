@@ -1,6 +1,7 @@
 ﻿import 'react-native-gesture-handler';
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
+import {Button} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {MainScreen} from "../screens/MainScreen";
 import {PostScreen} from "../screens/PostScreen";
@@ -30,9 +31,14 @@ export const AppNavigation = () => (
                 component={PostScreen}
             />
             <PostNavigator.Screen
-                options={{title: MainScreen.options.headerTitle}}
                 name="MainScreen"
                 component={MainScreen}
+                options={{
+                    title: MainScreen.options.headerTitle,
+                    headerRight: () => (
+                        MainScreen.options.headerRight
+                    ),
+                }}
             />
             <PostNavigator.Screen
                 name="AboutScreen"
