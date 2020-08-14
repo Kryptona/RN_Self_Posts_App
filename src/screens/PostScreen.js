@@ -1,13 +1,25 @@
-﻿import React from 'react';
+﻿import React, {useEffect} from 'react';
 import {StyleSheet, Text, View, Image, Button, ScrollView, Alert} from 'react-native';
 import {THEME} from "../theme";
 import {DATA} from '../data';
 import {Post} from "../components/Post";
+import {AppHeaderIcon} from "../components/AppHeaderIcon";
+import {HeaderButtons, Item} from "react-navigation-header-buttons";
+import {MainScreen} from "./MainScreen";
 
-export const PostScreen = ({route}) => {
+export const PostScreen = ({navigation, route}) => {
+    
+    console.log("Nav", navigation, "route", route);
+    
+    useEffect(() => {
+        navigation.setParams({isBooked: isBooked});
+    }, []);
+
     const postId = route.params.postId;
 
     const post = DATA.find(post => post.id === postId);
+
+    const isBooked = post.isBooked;
 
     const removeHandler = () => {
         Alert.alert(
@@ -18,12 +30,15 @@ export const PostScreen = ({route}) => {
                     text: 'Отменить',
                     style: 'cancel'
                 },
-                { text: 'Удалить', style:'destructive', onPress: () => {} }
+                {
+                    text: 'Удалить', style: 'destructive', onPress: () => {
+                    }
+                }
             ],
-            { cancelable: false }
+            {cancelable: false}
         );
     };
-    
+
     return (
         <ScrollView>
             <View>
@@ -39,9 +54,19 @@ export const PostScreen = ({route}) => {
     )
 };
 
-PostScreen.options = ({route}) => {
+PostScreen.options = ({navigation, route}) => {
+    const date = route.params.date;
+    //todo будет падать скорее всего
+    const isBooked = route.params.isBooked;
+    
+    const iconName = isBooked ? 'ios-star' : 'ios-star-outline';
     return {
-        title: new Date(route.params.date).toLocaleDateString()
+        title: new Date(date).toLocaleDateString(),
+        headerRight: () => (
+            <HeaderButtons HeaderButtonComponent={AppHeaderIcon}>
+                <Item title="Take a photo" iconName={iconName} onPress={() => console.log("1234")}/>
+            </HeaderButtons>
+        ),
     }
 };
 

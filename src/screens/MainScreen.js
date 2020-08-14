@@ -2,7 +2,6 @@
 import {StyleSheet, Text, View, FlatList} from 'react-native';
 import {HeaderButtons, Item} from "react-navigation-header-buttons";
 import {DATA} from "../data";
-import {Ionicons} from '@expo/vector-icons';
 import {Post} from "../components/Post";
 import {AppHeaderIcon} from "../components/AppHeaderIcon";
 
@@ -27,7 +26,12 @@ MainScreen.options = {
     headerTitle: 'Мой блог',
     headerRight: (
         <HeaderButtons HeaderButtonComponent={AppHeaderIcon}>
-            <Ionicons name="md-camera" size={22} color="white" />
+            <Item title="Take a photo" iconName="ios-camera" onPress={() => console.log("1234")}/>
+        </HeaderButtons>
+    ),
+    headerLeft: (
+        <HeaderButtons HeaderButtonComponent={AppHeaderIcon}>
+            <Item title="Toggle Drawer" iconName="ios-menu" onPress={() => console.log("1234")}/>
         </HeaderButtons>
     )
 };
